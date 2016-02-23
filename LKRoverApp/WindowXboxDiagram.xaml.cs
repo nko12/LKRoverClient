@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LKRoverApp
 {
     /// <summary>
-    /// The main window to connect and control the mining robot.
+    /// Interaction logic for WindowXboxDiagram.xaml
     /// </summary>
-    public partial class WindowMain : Window
+    public partial class WindowXboxDiagram : Window
     {
-        public WindowMain()
+        public WindowXboxDiagram()
         {
             InitializeComponent();
-        }
-
-        private void MenuItemXboxDiagram_OnClick(object sender, RoutedEventArgs e)
-        {
-            WindowXboxDiagram win = new WindowXboxDiagram {Owner = this};
-            win.ShowDialog();
         }
     }
 }
