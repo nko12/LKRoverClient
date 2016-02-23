@@ -47,7 +47,7 @@ namespace LKRoverApp
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            this.windowMain.Background = new SolidColorBrush(Colors.Green);
         }
     }
 }
