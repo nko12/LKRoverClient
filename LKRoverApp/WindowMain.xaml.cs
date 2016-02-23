@@ -24,5 +24,30 @@ namespace LKRoverApp
         {
             InitializeComponent();
         }
+
+        private void buttonUCF_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("UCF Lunar Knights!");
+        }
+
+        private void buttonSpace_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Wow, space is cool!", "Space Is Awesome", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        }
+
+        private void buttonBackground_Click(object sender, RoutedEventArgs e)
+        {
+            this.windowMain.Background = new SolidColorBrush(Colors.Gold);
+        }
+
+        private void buttonShowName_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hi " + this.textBoxName.Text + "!");
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
