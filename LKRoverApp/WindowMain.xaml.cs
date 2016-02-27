@@ -30,5 +30,10 @@ namespace LKRoverApp
             WindowXboxDiagram win = new WindowXboxDiagram {Owner = this};
             win.ShowDialog();
         }
+
+        private void menuItemExit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

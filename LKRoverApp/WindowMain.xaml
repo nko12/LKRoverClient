@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LKRoverApp"
         mc:Ignorable="d"
-        Title="Lunar Knights Rover Controller" Height="350" Width="525">
+        Title="Lunar Knights Rover Controller" Height="600" Width="800" WindowStartupLocation="CenterScreen">
     <Grid x:Name="gridMain">
         <StatusBar x:Name="statusBarRobot" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
             <StatusBarItem>
@@ -13,9 +13,23 @@
             </StatusBarItem>
         </StatusBar>
         <Menu x:Name="menu" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-            <MenuItem x:Name="menuItemConnection" Header="Connection"></MenuItem>
+            <MenuItem x:Name="menuItemConnection" Header="Connection">
+                <MenuItem x:Name="menuItemConnect" Header="Connect"></MenuItem>
+                <MenuItem x:Name="menuItemExit" Header="Exit" Click="menuItemExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuItemMode" Header="Mode">
+                <MenuItem x:Name="menuItemDataMode" Header="Data Mode">
+                    <MenuItem x:Name="menuItemPracticeMode" Header="Practice Mode" IsChecked="True"></MenuItem>
+                    <MenuItem x:Name="menuItemCompetitionMode" Header="Competition Mode"></MenuItem>
+                </MenuItem>
+                <MenuItem x:Name="menuItemGameMode" Header="Game mode">
+                    <MenuItem x:Name="menuItemAutonomousMode" Header="Autonomous Mode" IsCheckable="True"></MenuItem>
+                    <MenuItem x:Name="menuItemTeleopMode" Header="Teleoperation Mode" IsCheckable="True" IsChecked="True"></MenuItem>
+                </MenuItem>
+            </MenuItem>
             <MenuItem x:Name="menuItemHelp" Header="Help">
                 <MenuItem x:Name="menuItemXboxDiagram" Header="Xbox Controller Help" Click="MenuItemXboxDiagram_OnClick"></MenuItem>
+                <MenuItem x:Name="menuItemAbout" Header="About"></MenuItem>
             </MenuItem>
             </Menu>
     </Grid>
