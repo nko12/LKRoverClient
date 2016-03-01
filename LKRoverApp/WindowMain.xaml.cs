@@ -85,7 +85,7 @@ namespace LKRoverApp
             GamePadState lastState = GamePad.GetState(PlayerIndex.One);
             while (true)
             {
-                //Thread.Sleep(500);
+                Thread.Sleep(20);
 
                 GamePadState currentState = GamePad.GetState(PlayerIndex.One);
                 //if (currentState.PacketNumber == lastState.PacketNumber)
@@ -96,12 +96,44 @@ namespace LKRoverApp
                     //The button has been pressed.
                     InvokeSetControlBackColor(textBox1, Colors.Green);
                 }
-                else if (currentState.Buttons.A == ButtonState.Released && lastState.Buttons.A == ButtonState.Pressed)
+                else if(currentState.Buttons.A == ButtonState.Released && lastState.Buttons.A == ButtonState.Pressed)
                 {
                     //The button has been released.
                     InvokeSetControlBackColor(textBox1, Colors.Red);
                 }
 
+                if(currentState.Buttons.B == ButtonState.Pressed && lastState.Buttons.B == ButtonState.Released)
+                {
+                    //The button has been pressed.
+                    InvokeSetControlBackColor(textBox, Colors.Green);
+                }
+                else if(currentState.Buttons.B == ButtonState.Released && lastState.Buttons.B == ButtonState.Pressed)
+                {
+                    //The button has been released.
+                    InvokeSetControlBackColor(textBox, Colors.Red);
+                }
+
+                if(currentState.Buttons.X == ButtonState.Pressed && lastState.Buttons.X == ButtonState.Released)
+                {
+                    //The button has been pressed.
+                    InvokeSetControlBackColor(textBox2, Colors.Green);
+                }
+                else if(currentState.Buttons.X == ButtonState.Released && lastState.Buttons.X == ButtonState.Pressed)
+                {
+                    //The button has been released.
+                    InvokeSetControlBackColor(textBox2, Colors.Red);
+                }
+
+                if(currentState.Buttons.Y == ButtonState.Pressed && lastState.Buttons.Y == ButtonState.Released)
+                {
+                    //The button has been pressed.
+                    InvokeSetControlBackColor(textBox3, Colors.Green);
+                }
+                else if (currentState.Buttons.Y == ButtonState.Released && lastState.Buttons.Y == ButtonState.Pressed)
+                {
+                    //The button has been released.
+                    InvokeSetControlBackColor(textBox3, Colors.Red);
+                }
 
                 lastState = currentState;
             }
@@ -150,15 +182,15 @@ public class xbox_controller
         
         xbox_a = gamePadState.Buttons.A;
         xbox_b = gamePadState.Buttons.B;
-        xbox_x = GamePad.GetState(player).Buttons.X;
-        xbox_y = GamePad.GetState(player).Buttons.Y;
-        xbox_start = GamePad.GetState(player).Buttons.Start;
-        xbox_back = GamePad.GetState(player).Buttons.Back;
-        xbox_home = GamePad.GetState(player).Buttons.Guide;
-        xbox_rightbumper = GamePad.GetState(player).Buttons.RightShoulder;
-        xbox_leftbumper = GamePad.GetState(player).Buttons.LeftShoulder;
-        var left_joystick_press = GamePad.GetState(player).Buttons.LeftStick;  //not values of axis (only pressed value)
-        var right_joystick_press = GamePad.GetState(player).Buttons.RightStick; // not values of axis (only pressed value)
+        xbox_x = gamePadState.Buttons.X;
+        xbox_y = gamePadState.Buttons.Y;
+        xbox_start = gamePadState.Buttons.Start;
+        xbox_back = gamePadState.Buttons.Back;
+        xbox_home = gamePadState.Buttons.Guide;
+        xbox_rightbumper = gamePadState.Buttons.RightShoulder;
+        xbox_leftbumper = gamePadState.Buttons.LeftShoulder;
+        var left_joystick_press = gamePadState.Buttons.LeftStick;  //not values of axis (only pressed value)
+        var right_joystick_press = gamePadState.Buttons.RightStick; // not values of axis (only pressed value)
     }
 
 }
