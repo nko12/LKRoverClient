@@ -58,28 +58,8 @@ namespace LKRoverApp
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-            test_controller();
-
-        }
-
-        private void test_controller()
-        {
-            xbox.buttons();
-            if (xbox.xbox_a != ButtonState.Pressed)
-            {
-
-                textBox1.Background = Brushes.Red;
-            }
-            else
-            {
-                textBox1.Background = Brushes.Green;
-            }
-        }
-
-
+        
+        
         private void XboxControllerThread()
         {
             GamePadState lastState = GamePad.GetState(PlayerIndex.One);
@@ -91,6 +71,7 @@ namespace LKRoverApp
                 //if (currentState.PacketNumber == lastState.PacketNumber)
                 //    continue;
 
+                //if statements to read the xbox buttons and preform an action
                 if (currentState.Buttons.A == ButtonState.Pressed && lastState.Buttons.A == ButtonState.Released)
                 {
                     //The button has been pressed.
@@ -101,6 +82,7 @@ namespace LKRoverApp
                     //The button has been released.
                     InvokeSetControlBackColor(textBox1, Colors.Red);
                 }
+
 
                 if(currentState.Buttons.B == ButtonState.Pressed && lastState.Buttons.B == ButtonState.Released)
                 {
@@ -113,6 +95,7 @@ namespace LKRoverApp
                     InvokeSetControlBackColor(textBox, Colors.Red);
                 }
 
+
                 if(currentState.Buttons.X == ButtonState.Pressed && lastState.Buttons.X == ButtonState.Released)
                 {
                     //The button has been pressed.
@@ -123,6 +106,7 @@ namespace LKRoverApp
                     //The button has been released.
                     InvokeSetControlBackColor(textBox2, Colors.Red);
                 }
+
 
                 if(currentState.Buttons.Y == ButtonState.Pressed && lastState.Buttons.Y == ButtonState.Released)
                 {
@@ -135,6 +119,25 @@ namespace LKRoverApp
                     InvokeSetControlBackColor(textBox3, Colors.Red);
                 }
 
+                //Dpad inputs to return Dpad press values of up, down, left and right
+                if(currentState.DPad.Up == ButtonState.Pressed )
+                {
+                    InvokeSetTextboxText(textBox4, "up");
+                }else if(currentState.DPad.Down == ButtonState.Pressed)
+                {
+                    InvokeSetTextboxText(textBox4, "down");
+                }else if (currentState.DPad.Left == ButtonState.Pressed)
+                {
+                    InvokeSetTextboxText(textBox4, "left");
+                }else if(currentState.DPad.Right == ButtonState.Pressed)
+                {
+                    InvokeSetTextboxText(textBox4, "right");
+                }
+                else
+                {
+                    InvokeSetTextboxText(textBox4, "");
+                }
+
                 lastState = currentState;
             }
         }
@@ -144,6 +147,14 @@ namespace LKRoverApp
             c.Dispatcher.Invoke(delegate()
             {
                 c.Background = new SolidColorBrush(color);
+            });
+        }
+
+        private void InvokeSetTextboxText(TextBox c, string message)
+        {
+            c.Dispatcher.Invoke(delegate ()
+            {
+                c.Text = message;
             });
         }
     }
