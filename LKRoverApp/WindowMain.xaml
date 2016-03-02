@@ -22,6 +22,13 @@
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="10,269,0,0" TextWrapping="Wrap" Text="A" VerticalAlignment="Top" Width="16" TextChanged="textBox1_TextChanged"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="40,269,0,0" TextWrapping="Wrap" Text="X" VerticalAlignment="Top" Width="14"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="54,269,0,0" TextWrapping="Wrap" Text="Y" VerticalAlignment="Top" Width="15"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="10,201,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="10,218,0,0" TextWrapping="Wrap" Text="Dpad" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.409,1.426"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="10,136,0,0" TextWrapping="Wrap" Text="Left Joystick" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="10,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="10,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox8" HorizontalAlignment="Left" Height="23" Margin="130,136,0,0" TextWrapping="Wrap" Text="Right Joystick" VerticalAlignment="Top" Width="120" TextChanged="textBox8_TextChanged"/>
+        <TextBox x:Name="textBox9" HorizontalAlignment="Left" Height="23" Margin="130,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox10" HorizontalAlignment="Left" Height="23" Margin="130,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

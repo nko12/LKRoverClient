@@ -135,7 +135,39 @@ namespace LKRoverApp
                 }
                 else
                 {
-                    InvokeSetTextboxText(textBox4, "");
+                    InvokeSetTextboxText(textBox4, "Dpad");
+                }
+
+                //left joystick values
+                if(currentState.ThumbSticks.Left.X != 0 || currentState.ThumbSticks.Left.Y != 0)
+                {
+                    float left_x;
+                    float left_y;
+                    left_x = currentState.ThumbSticks.Left.X;
+                    left_y = currentState.ThumbSticks.Left.Y;
+                    InvokeSetTextboxText(textBox6, "X: " + left_x);
+                    InvokeSetTextboxText(textBox7, "Y: " + left_y);
+                }
+                else
+                {
+                    InvokeSetTextboxText(textBox6, "X: 0");
+                    InvokeSetTextboxText(textBox7, "Y: 0");
+                }
+                //right joystick values
+                if(currentState.ThumbSticks.Right.X != 0 || currentState.ThumbSticks.Right.Y != 0)
+                {
+                    float right_x;
+                    float right_y;
+                    right_x = currentState.ThumbSticks.Right.X;
+                    right_y = currentState.ThumbSticks.Right.Y;
+                    InvokeSetTextboxText(textBox9, "X: " + right_x);
+                    InvokeSetTextboxText(textBox10, "Y: " + right_y);
+
+                }
+                else
+                {
+                    InvokeSetTextboxText(textBox9, "X: 0");
+                    InvokeSetTextboxText(textBox10, "Y: 0");
                 }
 
                 lastState = currentState;
@@ -152,10 +184,22 @@ namespace LKRoverApp
 
         private void InvokeSetTextboxText(TextBox c, string message)
         {
-            c.Dispatcher.Invoke(delegate ()
+
+            try {
+                c.Dispatcher.Invoke(delegate ()
+                {
+                    c.Text = message;
+                });
+            }
+            catch
             {
-                c.Text = message;
-            });
+              //prevents error message when main window is closed as it will not run code when main window is closed  
+            }
+        }
+
+        private void textBox8_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        
         }
     }
 
