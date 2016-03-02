@@ -30,5 +30,7 @@
         <TextBox x:Name="textBox8" HorizontalAlignment="Left" Height="23" Margin="130,136,0,0" TextWrapping="Wrap" Text="Right Joystick" VerticalAlignment="Top" Width="120" TextChanged="textBox8_TextChanged"/>
         <TextBox x:Name="textBox9" HorizontalAlignment="Left" Height="23" Margin="130,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox10" HorizontalAlignment="Left" Height="23" Margin="130,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox11" HorizontalAlignment="Left" Height="23" Margin="130,218,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="textBox12" HorizontalAlignment="Left" Height="23" Margin="130,241,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="161"/>
     </Grid>
 </Window>

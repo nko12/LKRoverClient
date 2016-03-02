@@ -119,8 +119,92 @@ namespace LKRoverApp
                     InvokeSetControlBackColor(textBox3, Colors.Red);
                 }
 
+
+                if (currentState.Buttons.Start == ButtonState.Pressed && lastState.Buttons.Start == ButtonState.Released)
+                {
+                    //The button has been pressed.
+                    
+                }
+                else if (currentState.Buttons.Start == ButtonState.Released && lastState.Buttons.Start == ButtonState.Pressed)
+                {
+                    //The button has been released.
+                    
+                }
+
+
+                if (currentState.Buttons.Back == ButtonState.Pressed && lastState.Buttons.Back == ButtonState.Released)
+                {
+                    //The button has been pressed.
+
+                }
+                else if (currentState.Buttons.Back == ButtonState.Released && lastState.Buttons.Back == ButtonState.Pressed)
+                {
+                    //The button has been released.
+
+                }
+
+
+                if (currentState.Buttons.RightShoulder == ButtonState.Pressed && lastState.Buttons.RightShoulder == ButtonState.Released)
+                {
+                    //The button has been pressed.
+
+                }
+                else if (currentState.Buttons.RightShoulder == ButtonState.Released && lastState.Buttons.RightShoulder == ButtonState.Pressed)
+                {
+                    //The button has been released.
+
+                }
+
+
+                if (currentState.Buttons.LeftShoulder == ButtonState.Pressed && lastState.Buttons.LeftShoulder == ButtonState.Released)
+                {
+                    //The button has been pressed.
+
+                }
+                else if (currentState.Buttons.LeftShoulder == ButtonState.Released && lastState.Buttons.LeftShoulder == ButtonState.Pressed)
+                {
+                    //The button has been released.
+
+                }
+
+
+                if (currentState.Buttons.Guide == ButtonState.Pressed && lastState.Buttons.Guide == ButtonState.Released)
+                {
+                    //The button has been pressed.
+
+                }
+                else if (currentState.Buttons.Guide == ButtonState.Released && lastState.Buttons.Guide == ButtonState.Pressed)
+                {
+                    //The button has been released.
+
+                }
+
+                //if joystick is pressed in, not movement of joystick
+                if (currentState.Buttons.RightStick == ButtonState.Pressed && lastState.Buttons.RightStick == ButtonState.Released)
+                {
+                    //The button has been pressed.
+
+                }
+                else if (currentState.Buttons.RightStick == ButtonState.Released && lastState.Buttons.RightStick == ButtonState.Pressed)
+                {
+                    //The button has been released.
+
+                }
+
+                //if joystick is pressed in, not movement of joystick
+                if (currentState.Buttons.LeftStick == ButtonState.Pressed && lastState.Buttons.LeftStick == ButtonState.Released)
+                {
+                    //The button has been pressed.
+
+                }
+                else if (currentState.Buttons.LeftStick == ButtonState.Released && lastState.Buttons.LeftStick == ButtonState.Pressed)
+                {
+                    //The button has been released.
+
+                }
+
                 //Dpad inputs to return Dpad press values of up, down, left and right
-                if(currentState.DPad.Up == ButtonState.Pressed )
+                if (currentState.DPad.Up == ButtonState.Pressed )
                 {
                     InvokeSetTextboxText(textBox4, "up");
                 }else if(currentState.DPad.Down == ButtonState.Pressed)
@@ -153,6 +237,7 @@ namespace LKRoverApp
                     InvokeSetTextboxText(textBox6, "X: 0");
                     InvokeSetTextboxText(textBox7, "Y: 0");
                 }
+                
                 //right joystick values
                 if(currentState.ThumbSticks.Right.X != 0 || currentState.ThumbSticks.Right.Y != 0)
                 {
@@ -169,6 +254,23 @@ namespace LKRoverApp
                     InvokeSetTextboxText(textBox9, "X: 0");
                     InvokeSetTextboxText(textBox10, "Y: 0");
                 }
+
+                //trigger values
+                if(currentState.Triggers.Left != 0 || currentState.Triggers.Right != 0)
+                {
+                    float right_trigger;
+                    float left_trigger;
+                    right_trigger = currentState.Triggers.Right;
+                    left_trigger = currentState.Triggers.Left;
+                    InvokeSetTextboxText(textBox11, "Right Trigger: " + right_trigger);
+                    InvokeSetTextboxText(textBox12, "Left Trigger: " + left_trigger);
+                }
+                else
+                {
+                    InvokeSetTextboxText(textBox11, "Right Trigger: 0");
+                    InvokeSetTextboxText(textBox12, "Left Trigger: 0");
+                }
+
 
                 lastState = currentState;
             }
