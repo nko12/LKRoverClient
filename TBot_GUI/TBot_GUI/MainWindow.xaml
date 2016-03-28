@@ -1,0 +1,23 @@
+﻿<Window x:Class="TBot_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TBot_GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="478.6" Width="644.8">
+    <Grid>
+        <Button x:Name="buttonConnect" Content="Connect" HorizontalAlignment="Left" Height="26" Margin="139,43,0,0" VerticalAlignment="Top" Width="86" Click="buttonConnect_Click"/>
+        <TextBox x:Name="textBoxStatus" HorizontalAlignment="Left" Height="378" Margin="359,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>
+        <Button x:Name="buttonForward" Content="Forward" HorizontalAlignment="Left" Margin="159,145,0,0" VerticalAlignment="Top" Width="48" Height="48" Click="buttonForward_Click" IsEnabled="False"/>
+        <Button x:Name="buttonLeft" Content="Left" HorizontalAlignment="Left" Margin="106,198,0,0" VerticalAlignment="Top" Width="48" Height="48" Click="buttonLeft_Click" IsEnabled="False"/>
+        <Button x:Name="buttonRight" Content="Right" HorizontalAlignment="Left" Margin="212,198,0,0" VerticalAlignment="Top" Width="48" Height="48" Click="buttonRight_Click" IsEnabled="False"/>
+        <Button x:Name="buttonReverse" Content="Reverse" HorizontalAlignment="Left" Margin="159,251,0,0" VerticalAlignment="Top" Width="48" Height="48" Click="buttonReverse_Click" IsEnabled="False"/>
+        <TextBox x:Name="textBoxCOM" HorizontalAlignment="Left" Height="26" Margin="20,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" GotFocus="textBoxCOM_GotFocus"/>
+        <Button x:Name="buttonDisconnect" Content="Disconnect" HorizontalAlignment="Left" Height="26" Margin="139,74,0,0" VerticalAlignment="Top" Width="86" IsEnabled="False" Click="buttonDisconnect_Click"/>
+        <Button x:Name="buttonStop" Content="Stop" HorizontalAlignment="Left" Margin="159,198,0,0" VerticalAlignment="Top" Width="48" Height="48" IsEnabled="False" Click="buttonStop_Click" FontWeight="Bold"/>
+        <Label x:Name="label" Content="Enter COM Port:" HorizontalAlignment="Left" Margin="20,17,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label x:Name="label1" Content="Status:" HorizontalAlignment="Left" Margin="359,17,0,0" VerticalAlignment="Top" Width="91"/>
+
+    </Grid>
+</Window>
