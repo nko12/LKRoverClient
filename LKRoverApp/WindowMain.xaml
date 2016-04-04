@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LKRoverApp"
         mc:Ignorable="d"
-        Title="Lunar Knights Rover Controller" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Lunar Knights Rover Controller" Height="600" Width="800" WindowStartupLocation="CenterScreen" Loaded="WindowMain_OnLoaded" Closed="WindowMain_OnClosed">
     <Grid x:Name="gridMain">
         <StatusBar x:Name="statusBarRobot" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
             <StatusBarItem>

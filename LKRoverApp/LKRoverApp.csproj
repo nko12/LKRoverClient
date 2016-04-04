@@ -61,6 +61,7 @@
     <Compile Include="WindowXboxDiagram.xaml.cs">
       <DependentUpon>WindowXboxDiagram.xaml</DependentUpon>
     </Compile>
+    <Compile Include="XboxControllerListener.cs" />
     <Page Include="WindowMain.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
