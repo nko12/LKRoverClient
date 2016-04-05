@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LKXbobxController;
 
 namespace LKRoverApp
 {
     /// <summary>
     /// The main window to connect and control the mining robot.
     /// </summary>
-    public partial class WindowMain
+    public partial class WindowMain : Window
     {
         private XboxControllerListener _xListener;
 
@@ -45,7 +46,13 @@ namespace LKRoverApp
             _xListener.ButtonReleased += _xListener_ButtonReleased;
             _xListener.TriggerMoved += _xListener_TriggerMoved;
             _xListener.ThumbstickMoved += _xListener_ThumbstickMoved;
+            _xListener.ControllerDisconnected += _xListener_ControllerDisconnected;
             _xListener.StartControllerThread();
+        }
+
+        private void _xListener_ControllerDisconnected(object sender, EventArgs e)
+        {
+            MessageBox.Show("Controller disconnected!", "Warning", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
         private void _xListener_ThumbstickMoved(object sender, ThumbAxisEventArgs e)

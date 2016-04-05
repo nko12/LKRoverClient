@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LKXbobxController;
 
 namespace TBot_GUI
 {
@@ -23,7 +24,8 @@ namespace TBot_GUI
     public partial class MainWindow : Window
     {
         //Global TBot SerialPort can be accessed by all methods
-        SerialPort TBot = new SerialPort();
+        private SerialPort TBot = new SerialPort();
+        private LKXbobxController.XboxControllerListener _xlistener;
 
         public MainWindow()
         {
@@ -41,7 +43,7 @@ namespace TBot_GUI
             }
 
             //Invalid COM port provided
-            else if(!Regex.IsMatch(textBoxCOM.Text, @"^COM\d{1,256}$"))
+            else if (!Regex.IsMatch(textBoxCOM.Text, @"^COM\d{1,256}$"))
             {
                 textBoxStatus.AppendText("-Invalid Format. Enter as: COM#\n");
             }
@@ -60,7 +62,7 @@ namespace TBot_GUI
                     TBot.Parity = Parity.None;
                     TBot.ReadTimeout = 500;
                     TBot.ReceivedBytesThreshold = 1;
-                    
+
                     //Open the Connection
                     TBot.Open();
                     textBoxStatus.AppendText("-Connection Success\n");
@@ -146,5 +148,45 @@ namespace TBot_GUI
 
         }
 
+        private void windowMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            _xlistener = new XboxControllerListener(Dispatcher);
+            _xlistener.ListeningSleepDelay = 30;
+            _xlistener.ButtonPressed += _xlistener_ButtonPressed;
+            _xlistener.ButtonReleased += _xlistener_ButtonReleased;
+            _xlistener.StartControllerThread();
+        }
+
+        private void _xlistener_ButtonReleased(object sender, ButtonEventArgs e)
+        {
+            //If any button is released, this means the T-bot should start.
+            textBoxStatus.AppendText("-Stop\n");
+            TBot.Write("E");
+        }
+
+        private void _xlistener_ButtonPressed(object sender, ButtonEventArgs e)
+        {
+            //Check which button has been pressed.
+            switch (e.AffectedButton)
+            {
+                case ControllerButtons.DPadUp:
+                    textBoxStatus.AppendText("-Forward\n");
+                    TBot.Write("F");
+                    break;
+                case ControllerButtons.DPadDown:
+                    textBoxStatus.AppendText("-Reverse\n");
+                    TBot.Write("R");
+                    break;
+                case ControllerButtons.DPadLeft:
+                    textBoxStatus.AppendText("-Left\n");
+                    TBot.Write("P");
+                    break;
+
+                case ControllerButtons.DPadRight:
+                    textBoxStatus.AppendText("-Right\n");
+                    TBot.Write("S");
+                    break;
+            }
+        }
     }
 }

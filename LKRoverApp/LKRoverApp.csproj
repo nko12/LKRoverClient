@@ -49,9 +49,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="XInputDotNetPure">
-      <HintPath>..\Libraries\XInputDotNet\XInputDotNetPure.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -61,7 +58,6 @@
     <Compile Include="WindowXboxDiagram.xaml.cs">
       <DependentUpon>WindowXboxDiagram.xaml</DependentUpon>
     </Compile>
-    <Compile Include="XboxControllerListener.cs" />
     <Page Include="WindowMain.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\xbox-diagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LKXboxController\LKXboxController.csproj">
+      <Project>{900ca7df-23d0-44c4-826f-d813f343d816}</Project>
+      <Name>LKXboxController</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

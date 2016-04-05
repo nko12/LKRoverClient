@@ -1,11 +1,11 @@
-﻿<Window x:Class="TBot_GUI.MainWindow"
+﻿<Window x:Name="windowMain" x:Class="TBot_GUI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TBot_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="478.6" Width="644.8">
+        Title="MainWindow" Height="478.6" Width="644.8" Loaded="windowMain_Loaded">
     <Grid>
         <Button x:Name="buttonConnect" Content="Connect" HorizontalAlignment="Left" Height="26" Margin="139,43,0,0" VerticalAlignment="Top" Width="86" Click="buttonConnect_Click"/>
         <TextBox x:Name="textBoxStatus" HorizontalAlignment="Left" Height="378" Margin="359,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249"/>

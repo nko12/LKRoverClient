@@ -4,7 +4,7 @@ using System.Threading;
 using System.Windows.Threading;
 using XInputDotNetPure;
 
-namespace LKRoverApp
+namespace LKXbobxController
 {
     /// <summary>
     /// Represents the buttons on a controller.
@@ -364,7 +364,7 @@ namespace LKRoverApp
                                 
                                 //After the timer executes, set its value back to null.
                                 disconnectTimer = null;
-                            }, null, 5000, Timeout.Infinite);
+                            }, null, 2000, Timeout.Infinite);
                         }
                         break;
                     case ConnectionState.InitDisconnect:
